@@ -1,3 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 
-access_to_register_id,access_to_register_name,model_wrranty.register,base.user_group,1,1,1,1
+access_to_register_id,access_to_register_name,model_warranty_register,base.group_user,1,1,1,1

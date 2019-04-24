@@ -23,7 +23,7 @@
     <!-- view list of the warranties sorted by customers -->
 
     <!-- generating list view for warranties -->
-    <record model="ir.ui.view" id="course_tree_view">
+    <record model="ir.ui.view" id="register_tree_view">
         <field name="name">register.tree</field>
         <field name="model">warranty.register</field>
         <field name="arch" type="xml">
@@ -34,6 +34,19 @@
               <field name="date_end"/>
               <field name="customer"/>
             </tree>
+        </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="register_search_view">
+        <field name="name">register.search</field>
+        <field name="model">warranty.register</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="date_start"/>
+                <field name="date_end"/>
+            </search>
         </field>
     </record>
 

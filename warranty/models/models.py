@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from odoo import models, fields, api
+
 class Register(models.Model):
     _name = 'warranty.register'
     _description = 'Register warranty type'
@@ -28,6 +29,9 @@ class Register(models.Model):
     customer = fields.Many2one('warranty.customer',
         ondelete='cascade', string="Customer", required=True)
 
+    provider = fields.Many2one('warranty.provider',
+        ondelete='cascade', string="Provider", required=True)
+
     release = fields.Boolean(string='Release State', default=False)
 
 
@@ -42,6 +46,15 @@ class State(models.Model):
 
 class Customer(models.Model):
     _inherit = 'res.partner'
+    _name = 'warranty.customer'
+    _description = 'Customer of contraction'
+
+    warranty_ids = fields.One2many(
+        'warranty.register', 'customer', string="Registered Warranties")
+
+
+class Provider(models.Model):
+    _inherit = 'res.users'
     _name = 'warranty.customer'
     _description = 'Customer of contraction'
 
